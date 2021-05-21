@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 export async function getGeocodingWeatherData(locale) {
   return axios
     .get(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${locale}&limit=1&appid=180941f68139fba12f166dc35d9b688b`
+      `https://api.openweathermap.org/geo/1.0/direct?q=${locale}&limit=1&appid=180941f68139fba12f166dc35d9b688b`
     )
     .then((response) => {
       const { lat, lon } = response.data[0];
