@@ -50,7 +50,7 @@ export async function getDailyWeather(date, latitude, longitude) {
     return pastData.current;
   } else {
     const forecastData = await getForecastData(latitude, longitude);
-    const dayIndex = dayjs(date).diff(dayjs(), "day");
+    const dayIndex = Math.ceil(dayjs(date).diff(dayjs(), "day", true));
     const dailyData = forecastData.daily[dayIndex];
     dailyData.temp = dailyData.temp.day;
     return dailyData;
